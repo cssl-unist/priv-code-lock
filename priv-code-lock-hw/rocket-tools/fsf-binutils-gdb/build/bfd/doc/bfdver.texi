@@ -1,4 +1,0 @@
-@set VERSION 2.33.50
-@set VERSION_PACKAGE (GNU Binutils) 
-@set UPDATED November 2023
-@set BUGURL @uref{http://www.sourceware.org/bugzilla/}
