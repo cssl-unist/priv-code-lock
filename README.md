@@ -24,7 +24,7 @@ ssh-add ~/.ssh/id_rsa
 
 ## Authors
 - Seon Ha (UNIST)  <seonha@unist.ac.kr>
-- Minsang Yu <ms1021@unist.ac.kr>
+- Minsang Yu (UNIST)  <ms1021@unist.ac.kr>
 - Hyungon Moon (UNIST) <hyungon@unist.ac.kr>
 - Jongeun Lee (UNIST) <jlee@unist.ac.kr>
 
