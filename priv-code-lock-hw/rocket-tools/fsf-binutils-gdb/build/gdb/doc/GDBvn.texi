@@ -1,0 +1,4 @@
+@set GDBVN 8.3.50.20190920-git
+@set VERSION_PACKAGE (GDB) 
+@set BUGURL @uref{http://www.gnu.org/software/gdb/bugs/}
+@set BUGURL_DEFAULT

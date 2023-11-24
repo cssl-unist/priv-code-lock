@@ -1,0 +1,9 @@
+emulator/project/
+.bsp
+tags
+target/
+project/target
+*.swp
+*~
+.addons-dont-touch
+/lib/
