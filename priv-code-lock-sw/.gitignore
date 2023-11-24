@@ -1,0 +1,15 @@
+linux-*.tar.xz
+riscv-gnu-toolchain
+reloc-user-level/*.o
+reloc-user-level/reloc-user-level
+lkm/*/.*
+lkm/.*
+lkm/*/*.o
+lkm/*/.*
+lkm/*/*.o.cmd
+lkm/*.o
+work/
+toolchain
+bin/
+venv/
+lib64

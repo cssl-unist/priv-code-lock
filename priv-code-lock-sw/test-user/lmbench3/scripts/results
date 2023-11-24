@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# $Id$
+
+OS=buildroot
+CONFIG=`../scripts/config`
+RESULTS=results/$OS
+BASE=../$RESULTS/`uname -n`
+EXT=0
+
+echo "os: $OS"
+if [ ! -f "../bin/$OS/$CONFIG" ]
+then	echo "No config file?"
+	exit 1
+fi
+. ../bin/$OS/$CONFIG
+
+if [ ! -d ../$RESULTS ]
+then	mkdir -p ../$RESULTS
+fi
+RESULTS=$BASE.$EXT
+while [ -f $RESULTS ]
+do      EXT=`expr $EXT + 1`
+	RESULTS=$BASE.$EXT
+done
+
+cd ../bin/$OS 
+PATH=.:${PATH}; export PATH
+export SYNC_MAX
+export OUTPUT
+pwd
+lmbench $CONFIG 
+
+exit 0

@@ -1,0 +1,10 @@
+Writing control file for 600.perlbench_s train base riscv-64
+Writing control file for 602.gcc_s train base riscv-64
+Writing control file for 605.mcf_s train base riscv-64
+Writing control file for 620.omnetpp_s train base riscv-64
+Writing control file for 623.xalancbmk_s train base riscv-64
+Writing control file for 631.deepsjeng_s train base riscv-64
+Writing control file for 641.leela_s train base riscv-64
+Writing control file for 648.exchange2_s train base riscv-64
+Writing control file for 657.xz_s train base riscv-64
+Writing control file for 998.specrand_is train base riscv-64
