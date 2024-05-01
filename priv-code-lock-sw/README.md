@@ -48,10 +48,10 @@ You can go https://github.com/riscv-collab/riscv-gnu-toolchain.git
 ** Unset RISCV environment variable. 
 
 # Run simulator and make work/bbl.bin
-
+```
 cd priv-code-lock-sw
 make sim
-
+```
 -- ID: root / password: sifive 
 
 
@@ -59,13 +59,13 @@ make sim
 For turn on priv-code-lock, you use  syscall function (There is script in freedom-u-sdk/test-user/test) - You move this script to buildroot/system/skeleton/usr/
 
 
-##  test
+##  Test
 ```
 cd usr/   
  ./test -e   
  ./test -a   
 ```
-### test script arguments
+### Test script arguments
 ```
 -a: running all test  
 -e: enable pcl  
