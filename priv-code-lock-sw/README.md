@@ -76,22 +76,52 @@ cd usr/
 ```
 # LKM Test    
 ## LKM signing
-1. move lkm folder
-	(make + signing)   
-	` ./signing.sh "file name"`   
-	For example, ./signing.sh hello (Move hello.ko to buildroot)     
-2. move_buildroot_.sh (Move buildroot lkm module) target is hello.ko/greeter.ko   
-
-** (1+2)--> using one-shot.sh **
-
-3. buildroot/device_table.txt info
-	- The example is buldroot's root folder - device_table.txt
+1. In lkm folder  
+`cd lkm`
+2. make and sign lkm module  
+` ./signing.sh <file name>`   
 	
-3. In priv-code-lock-sw folder.
-    `make -j48 sim`
-4. Need to about 10 miniutes (Depending on system status, It is different. 
+For example, ./signing.sh hello      
+3. Move buildroot lkm module   
+`./move_buildroot_.sh`  
+This script copies hello.ko to the buildroot filesystem.
+Script that does steps 2 and 3 at once --> `./one-shot.sh` 
 
-5. `login: root / passward: sifive 
+4. Add info to buildroot/system/device_table.txt
+Rmove comment on line 21
+```
+ 1 # See package/makedevs/README for details
+  2 #
+  3 # This device table is used to assign proper ownership and permissions
+  4 # on various files. It doesn't create any device file, as it is used
+  5 # in both static device configurations (where /dev/ is static) and in
+  6 # dynamic configurations (where devtmpfs, mdev or udev are used).
+  7 #
+  8 # <name>                                <type>  <mode>  <uid>   <gid>   <major> <minor> <start> <inc>   <count>
+  9 /dev                                    d       755     0       0       -       -       -       -       -
+ 10 /tmp                                    d       1777    0       0       -       -       -       -       -
+ 11 /etc                                    d       755     0       0       -       -       -       -       -
+ 12 /root                                   d       700     0       0       -       -       -       -       -
+ 13 /var/www                                d       755     33      33      -       -       -       -       -
+ 14 /etc/shadow                             f       600     0       0       -       -       -       -       -
+ 15 /etc/passwd                             f       644     0       0       -       -       -       -       -
+ 16 /etc/network/if-up.d                    d       755     0       0       -       -       -       -       -
+ 17 /etc/network/if-pre-up.d                d       755     0       0       -       -       -       -       -
+ 18 /etc/network/if-down.d                  d       755     0       0       -       -       -       -       -
+ 19 /etc/network/if-post-down.d             d       755     0       0       -       -       -       -       -
+ 20 /etc/modules            f       500     0       0       -       -       -       -       -
+ 21 /usr/hello.ko          f       500     0       0       -       -       -       -       -
+ 22 # uncomment this to allow starting x as non-root
+ 23 #/usr/X11R6/bin/Xfbdev                  f       4755    0       0       -       -       -       -       -
+~
+```
+
+	
+
+5. In priv-code-lock-sw folder.
+    `make -j48 sim`
+6. Need to about 10 miniutes (Depending on system status, It is different. 
+ `login: root / passward: sifive`
 ## module load test 
 
 After login,
