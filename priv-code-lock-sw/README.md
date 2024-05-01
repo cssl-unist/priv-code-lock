@@ -58,21 +58,22 @@ make sim
 # priv-code-lcok test
 For turn on priv-code-lock, you use  syscall function (There is script in freedom-u-sdk/test-user/test) - You move this script to buildroot/system/skeleton/usr/
 
-## test script
-` -a: running all test  
- -e: enable pcl  
- -l: list_test   
- -t: test_id  
--r: read_victim  
-`
 
 ##  test
-`
+```
 cd usr/   
  ./test -e   
  ./test -a   
-`
+```
+### test script arguments
+```
+-a: running all test  
+-e: enable pcl  
+-l: list_test   
+-t: test_id  
+-r: read_victim  
 
+```
 # LKM Test    
 ## LKM signing
 1. move lkm
@@ -94,14 +95,11 @@ check ../usr`
 ## module load test 
 
 After login,
+```
 cd ../usr
-
 insmod hello.ko
-
-log: 
-
-# insmod hello.ko
-insmod hello.ko  
+```
+### log: 
 [DEBUG] isolation sw on! 1  
 [  159.467790] hello: loading out-of-tree module taints kernel.  
 [  159.469075] Hello world 1.  
