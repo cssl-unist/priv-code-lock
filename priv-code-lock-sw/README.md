@@ -1,4 +1,4 @@
-# This repository is privCodeLock 
+# This repository is priv-code-lock-sw
 
 ## Tested on ubuntu 18.04 
 
@@ -24,7 +24,6 @@ error: too few arguments to function '_PyImport_FixupBuiltin
 
 	- Solution: Hacky but works:in buildroot/support/scripts/check-kernel-headers.sh change the line return 1; -> return 0;
 
-=====================  
 # Install
 ## Install riscv-gnu-toolchain
 We need to install toolchain/bin/riscv64-unknown-linux-gnu-gcc.
@@ -45,10 +44,8 @@ You can go https://github.com/riscv-collab/riscv-gnu-toolchain.git
 	 ./configure --prefix=$(priv-code-lock_sw_root)/toolchain
 	make linux
 	```
-
-==================
 # on privCodeLock
-** unset RISCV environment variable. 
+** Unset RISCV environment variable. 
 
 # Run simulator and make work/bbl.bin
 
@@ -58,23 +55,23 @@ make sim
 -- ID: root / password: sifive 
 
 
-
 # priv-code-lcok test
 For turn on priv-code-lock, you use  syscall function (There is script in freedom-u-sdk/test-user/test) - You move this script to buildroot/system/skeleton/usr/
 
-test script
-` -a: running all test
- -e: enable pcl
- -l: list_test
- -t: test_id
--r: read_victim
+## test script
+` -a: running all test  
+ -e: enable pcl  
+ -l: list_test   
+ -t: test_id  
+-r: read_victim  
 `
 
 ##  test
-. cd usr/
-. ./test -e
-. ./test -a
-
+`
+cd usr/   
+ ./test -e   
+ ./test -a   
+`
 
 # LKM Test    
 ## LKM signing
@@ -104,11 +101,11 @@ insmod hello.ko
 log: 
 
 # insmod hello.ko
-insmod hello.ko
-[DEBUG] isolation sw on! 1
-[  159.467790] hello: loading out-of-tree module taints kernel.
-[  159.469075] Hello world 1.
-[DEBUG] isolation sw on! 0
+insmod hello.ko  
+[DEBUG] isolation sw on! 1  
+[  159.467790] hello: loading out-of-tree module taints kernel.  
+[  159.469075] Hello world 1.  
+[DEBUG] isolation sw on! 0  
  
 
 # Some tips
