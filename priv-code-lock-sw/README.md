@@ -80,12 +80,11 @@ cd usr/
 `cd lkm`
 2. make and sign lkm module  
 ` ./signing.sh <file name>`   
-	
-For example, ./signing.sh hello      
+	- For example, ./signing.sh hello      
 3. Move buildroot lkm module   
 `./move_buildroot_.sh`  
-This script copies hello.ko to the buildroot filesystem.
-Script that does steps 2 and 3 at once --> `./one-shot.sh` 
+	- This script copies hello.ko to the buildroot filesystem.   
+	- Script that does steps 2 and 3 at once --> `./one-shot.sh` 
 
 4. Add info to buildroot/system/device_table.txt
 Rmove comment on line 21
@@ -118,9 +117,9 @@ Rmove comment on line 21
 
 	
 
-5. In priv-code-lock-sw folder.
+5. In priv-code-lock-sw folder.   
     `make -j48 sim`
-6. Need to about 10 miniutes (Depending on system status, It is different. 
+6. Need to about 10 miniutes (Depending on system status, It is different.  
  `login: root / passward: sifive`
 ## module load test 
 
@@ -138,13 +137,13 @@ insmod hello.ko
 
 # Some tips
 If you have newly built Linux, or if there is a change in the lkm module, make cleanB 
- make cleanB (clean buildroot)  
+`make cleanB` (clean buildroot)  
 
 If you want to build new linux. 
-make cleanLinux(clean Linux)   
+`make cleanLinux`(clean Linux)   
 
 If you want to clean all work dir.
- make clean (clean work dir)   
+ `make clean` (clean work dir)   
 
 
 
