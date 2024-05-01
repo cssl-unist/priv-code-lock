@@ -76,22 +76,22 @@ cd usr/
 ```
 # LKM Test    
 ## LKM signing
-1. move lkm
-	(make + signing)
-	` ./signing.sh "file name"`
-	For example, ./signing.sh hello (Move hello.ko to buildroot)   
-2. move_buildroot_.sh( Move buildroot)- hello.ko/ greeter.ko
+1. move lkm folder
+	(make + signing)   
+	` ./signing.sh "file name"`   
+	For example, ./signing.sh hello (Move hello.ko to buildroot)     
+2. move_buildroot_.sh (Move buildroot lkm module) target is hello.ko/greeter.ko   
 
 ** (1+2)--> using one-shot.sh **
 
 3. buildroot/device_table.txt info
-	- The example is root folder - device_table.txt
+	- The example is buldroot's root folder - device_table.txt
 	
-3. In priv-code-lock-sw folder, make -j48 sim
-4. Need to about 10 miniutes(Depending on system status, It is different. 
+3. In priv-code-lock-sw folder.
+    `make -j48 sim`
+4. Need to about 10 miniutes (Depending on system status, It is different. 
 
 5. `login: root / passward: sifive 
-check ../usr`
 ## module load test 
 
 After login,
