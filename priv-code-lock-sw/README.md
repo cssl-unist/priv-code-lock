@@ -41,8 +41,8 @@ You can go https://github.com/riscv-collab/riscv-gnu-toolchain.git
 4. git submodule udpate --recurisive
 5. cd riscv-gnu-toolchain
 	```
-	 ./configure --prefix=$(priv-code-lock_sw_root)/toolchain
-	make linux
+	 ./configure --prefix=$(priv-code-lock_sw_root)/toolchain 
+	make 
 	```
 # on privCodeLock
 ** Unset RISCV environment variable. 
@@ -61,7 +61,8 @@ For turn on priv-code-lock, you use  syscall function (There is script in freedo
 
 ##  Test
 ```
-cd usr/   
+cd ../usr
+
  ./test -e   
  ./test -a   
 ```
